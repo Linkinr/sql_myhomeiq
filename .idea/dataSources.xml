@@ -22,11 +22,14 @@
       <jdbc-url>jdbc:postgresql://stage-soaleads.cat0pcybzzge.us-west-2.rds.amazonaws.com:5432/postgres</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="PROD_HIQ" uuid="df9222ec-19ea-4b4f-bfda-b69f2c8fe81f">
+    <data-source source="LOCAL" name="PROD_HIQ" read-only="true" uuid="df9222ec-19ea-4b4f-bfda-b69f2c8fe81f">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://prod-soaleads.czwienpf2ouy.us-west-2.rds.amazonaws.com:5432/postgres</jdbc-url>
+      <jdbc-additional-properties>
+        <property name="SHOW_TEMPLATE_DATABASES" value="true" />
+      </jdbc-additional-properties>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
     <data-source source="LOCAL" name="PROD_IQI" uuid="d1b85612-b572-4037-b81d-9812493332d9">

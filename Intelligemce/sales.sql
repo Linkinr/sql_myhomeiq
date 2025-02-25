@@ -1,8 +1,9 @@
+
 WITH relevant_realtors AS (SELECT id
                            FROM realtors
                            WHERE duplicate_uid IN (SELECT duplicate_uid
                                                    FROM realtors
-                                                   WHERE id = 24 -- Replace 24 with your desired ID
+                                                   WHERE id = 918296 -- Replace 24 with your desired ID
                            ))
 SELECT *
 FROM sales
