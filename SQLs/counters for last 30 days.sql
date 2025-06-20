@@ -110,15 +110,4 @@ SELECT
   ) AS interactions_last_30_days
 
 FROM customer_details
-WHERE user_id in (1,
-5544,
-8691,
-10192,
-16216,
-29900,
-29946,
-32441,
-33965,
-39723,
-43055,
-45933);
+WHERE user_id =20983

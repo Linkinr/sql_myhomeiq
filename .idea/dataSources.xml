@@ -43,5 +43,12 @@
       <jdbc-url>jdbc:postgresql://prod-intelligence-new.czwienpf2ouy.us-west-2.rds.amazonaws.com:5432/postgres</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="PROD_INTELv2" uuid="30fe11ec-bfdf-4b5b-8487-ea65b19860cb">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://prod-intelligence-green.czwienpf2ouy.us-west-2.rds.amazonaws.com:5432/postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

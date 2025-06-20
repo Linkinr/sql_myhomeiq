@@ -1,5 +1,7 @@
 ﻿SELECT * FROM home_shopper_imports
-WHERE created_at >= DATE_TRUNC('month', CURRENT_DATE)
+         where import_type = 0
+-- WHERE created_at >= DATE_TRUNC('month', CURRENT_DATE)
 ORDER BY id DESC
-LIMIT 10
+LIMIT 100
+
 
