@@ -50,5 +50,26 @@
       <jdbc-url>jdbc:postgresql://prod-intelligence-green.czwienpf2ouy.us-west-2.rds.amazonaws.com:5432/postgres</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="STAGE_WRITE" uuid="ef1422e9-f636-4613-a343-f948d5480124">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://stage-soaleads.cat0pcybzzge.us-west-2.rds.amazonaws.com:5432/postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="DEV Intel" read-only="true" uuid="d1cde2af-e9a2-41b0-9f59-f525e94a9804">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://dev-hiq-aurora.cluster-cqzy9hcpwgno.us-west-2.rds.amazonaws.com:5432/postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="DEV_Wright_new" uuid="1a0c2f4d-b138-4c84-8828-7874fa674f53">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://dev-hiq-aurora.cluster-cqzy9hcpwgno.us-west-2.rds.amazonaws.com:5432/postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
