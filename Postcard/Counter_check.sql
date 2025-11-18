@@ -6,9 +6,7 @@ WITH actual_in_progress_count AS (
     FROM recipients r,
          jsonb_array_elements(r.delivery_statuses) AS status_item
     WHERE (status_item ->> 'status') IN ('printing', 'en_route')
-    -- Якщо r.status != 0 коректно фільтрує, залишаємо його
-    -- УВАГА: r.status != 0 було залишено з вашого попереднього запиту.
-    -- Якщо це помилка, її потрібно видалити.
+    AND refunded IS FALSE
     GROUP BY r.campaign_id
 ),
 actual_scheduled_count AS (
@@ -42,13 +40,15 @@ actual_not_delivered_count AS (
     GROUP BY r.campaign_id
 ),
 actual_total_recipients AS (
-    -- 5. Підрахунок ЗАПИСІВ: Загальна кількість одержувачів, згруповано за campaign_id
+    -- 5. Підрахунок ЗАПИСІВ: Загальна кількість одержувачів, де delivery_statuses не порожній масив
     SELECT
         campaign_id,
         COUNT(*) AS total_recipients_count
     FROM recipients
+    WHERE jsonb_array_length(delivery_statuses) > 0 -- УМОВА: delivery_statuses != '[]'
+    AND refunded IS FALSE
     GROUP BY campaign_id
-    HAVING COUNT(*) > 0 -- Умова > 0 забезпечується групуванням
+    HAVING COUNT(*) > 0
 )
 SELECT
     c.id AS campaign_id,
@@ -76,7 +76,7 @@ SELECT
 
 FROM
     campaigns c
-INNER JOIN actual_total_recipients act_rec ON c.id = act_rec.campaign_id -- Тільки кампанії, де total_recipients > 0
+INNER JOIN actual_total_recipients act_rec ON c.id = act_rec.campaign_id
 LEFT JOIN actual_in_progress_count act_prg ON c.id = act_prg.campaign_id
 LEFT JOIN actual_scheduled_count act_sch ON c.id = act_sch.campaign_id
 LEFT JOIN actual_delivered_count act_del ON c.id = act_del.campaign_id
