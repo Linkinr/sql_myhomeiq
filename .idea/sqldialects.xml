@@ -15,6 +15,7 @@
     <file url="file://$PROJECT_DIR$/Intelligemce/realltors.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/Intelligemce/sales.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/Intelligemce/sales_for_Shana.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/Postcard/Counter_check.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/SQLs/Agents block - new homeowners and Agent's homeowners.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/SQLs/agents block - total interactions.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/SQLs/counters for last 30 days.sql" dialect="PostgreSQL" />

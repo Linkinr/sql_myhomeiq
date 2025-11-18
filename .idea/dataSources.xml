@@ -1,31 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="DEV" read-only="true" uuid="eb50108c-5b6f-4b18-9367-a296493cf84c">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://dev-soaleads.cqzy9hcpwgno.us-west-2.rds.amazonaws.com:5432/postgres</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
-    <data-source source="LOCAL" name="DEV_WRITE" uuid="be71d88d-58e0-47e7-a56e-9b2dee867b35">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://dev-soaleads.cqzy9hcpwgno.us-west-2.rds.amazonaws.com:5432/postgres</jdbc-url>
-      <jdbc-additional-properties>
-        <property name="database.postgres.introspect.system.schemas" value="true" />
-      </jdbc-additional-properties>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
-    <data-source source="LOCAL" name="STAGE" uuid="c1648a74-5c81-44eb-ab89-7e6ee6a80eb9">
+    <data-source source="LOCAL" name="STAGE" read-only="true" uuid="c1648a74-5c81-44eb-ab89-7e6ee6a80eb9">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://stage-soaleads.cat0pcybzzge.us-west-2.rds.amazonaws.com:5432/postgres</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="PROD_HIQ" uuid="df9222ec-19ea-4b4f-bfda-b69f2c8fe81f">
+    <data-source source="LOCAL" name="PROD_HIQ" read-only="true" uuid="df9222ec-19ea-4b4f-bfda-b69f2c8fe81f">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <schema-control>AUTOMATIC</schema-control>
@@ -36,14 +19,7 @@
       </jdbc-additional-properties>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="PROD_IQI" uuid="d1b85612-b572-4037-b81d-9812493332d9">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://prod-intelligence-new.czwienpf2ouy.us-west-2.rds.amazonaws.com:5432/postgres</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
-    <data-source source="LOCAL" name="PROD_INTELv2" uuid="30fe11ec-bfdf-4b5b-8487-ea65b19860cb">
+    <data-source source="LOCAL" name="PROD_IQI" read-only="true" uuid="30fe11ec-bfdf-4b5b-8487-ea65b19860cb">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
@@ -57,14 +33,14 @@
       <jdbc-url>jdbc:postgresql://stage-soaleads.cat0pcybzzge.us-west-2.rds.amazonaws.com:5432/postgres</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="DEV Intel" read-only="true" uuid="d1cde2af-e9a2-41b0-9f59-f525e94a9804">
+    <data-source source="LOCAL" name="DEV" read-only="true" uuid="d1cde2af-e9a2-41b0-9f59-f525e94a9804">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://dev-hiq-aurora.cluster-cqzy9hcpwgno.us-west-2.rds.amazonaws.com:5432/postgres</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="DEV_Wright_new" uuid="1a0c2f4d-b138-4c84-8828-7874fa674f53">
+    <data-source source="LOCAL" name="DEV_Wright" uuid="1a0c2f4d-b138-4c84-8828-7874fa674f53">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
