@@ -17,6 +17,7 @@ actual_scheduled_count AS (
     FROM recipients r,
          jsonb_array_elements(r.delivery_statuses) AS status_item
     WHERE (status_item ->> 'status') = 'scheduled'
+    AND status != 3
     GROUP BY r.campaign_id
 ),
 actual_delivered_count AS (
@@ -46,7 +47,8 @@ actual_total_recipients AS (
         COUNT(*) AS total_recipients_count
     FROM recipients
     WHERE jsonb_array_length(delivery_statuses) > 0 -- УМОВА: delivery_statuses != '[]'
-    AND refunded IS FALSE
+--     AND refunded IS FALSE
+    AND status != 3
     GROUP BY campaign_id
     HAVING COUNT(*) > 0
 )
