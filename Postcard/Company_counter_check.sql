@@ -27,6 +27,7 @@ actual_total_recipients AS (
     SELECT COUNT(*) AS total_recipients_count
     FROM recipients
     WHERE campaign_id = 821
+    AND status in (1,2,4)
 )
 SELECT
     -- Лічильник 1: total_delivered
