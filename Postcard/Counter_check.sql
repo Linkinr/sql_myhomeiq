@@ -55,25 +55,24 @@ actual_total_recipients AS (
 SELECT
     c.id AS campaign_id,
 
-    -- Фактичні підрахунки
     act_rec.total_recipients_count AS actual_total_recipients,
-    COALESCE(act_prg.actual_count, 0) AS actual_in_progress_count,
-    COALESCE(act_sch.scheduled_count, 0) AS actual_scheduled_count,
-    COALESCE(act_del.delivered_count, 0) AS actual_delivered_count,
-    COALESCE(act_ndl.not_delivered_count, 0) AS actual_not_delivered_count,
-
-    -- Очікувані лічильники з campaigns
     (c.counters ->> 'total_recipients')::int AS expected_total_recipients,
-    (c.counters ->> 'total_in_progress')::int AS expected_in_progress,
-    (c.counters ->> 'total_scheduled')::int AS expected_scheduled,
-    (c.counters ->> 'total_delivered')::int AS expected_delivered,
-    (c.counters ->> 'total_not_delivered')::int AS expected_not_delivered,
-
-    -- Результати порівняння
     (act_rec.total_recipients_count = (c.counters ->> 'total_recipients')::int) AS is_total_recipients_match,
+
+    COALESCE(act_prg.actual_count, 0) AS actual_in_progress_count,
+    (c.counters ->> 'total_in_progress')::int AS expected_in_progress,
     (COALESCE(act_prg.actual_count, 0) = (c.counters ->> 'total_in_progress')::int) AS is_in_progress_match,
+
+    COALESCE(act_sch.scheduled_count, 0) AS actual_scheduled_count,
+    (c.counters ->> 'total_scheduled')::int AS expected_scheduled,
     (COALESCE(act_sch.scheduled_count, 0) = (c.counters ->> 'total_scheduled')::int) AS is_scheduled_match,
+
+    COALESCE(act_del.delivered_count, 0) AS actual_delivered_count,
+    (c.counters ->> 'total_delivered')::int AS expected_delivered,
     (COALESCE(act_del.delivered_count, 0) = (c.counters ->> 'total_delivered')::int) AS is_delivered_match,
+
+    COALESCE(act_ndl.not_delivered_count, 0) AS actual_not_delivered_count,
+    (c.counters ->> 'total_not_delivered')::int AS expected_not_delivered,
     (COALESCE(act_ndl.not_delivered_count, 0) = (c.counters ->> 'total_not_delivered')::int) AS is_not_delivered_match
 
 FROM
