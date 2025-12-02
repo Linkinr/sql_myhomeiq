@@ -7,6 +7,7 @@ WITH actual_in_progress_count AS (
          jsonb_array_elements(r.delivery_statuses) AS status_item
     WHERE (status_item ->> 'status') IN ('printing', 'en_route')
     AND refunded IS FALSE
+    AND r.status !=3
     GROUP BY r.campaign_id
 ),
 actual_scheduled_count AS (

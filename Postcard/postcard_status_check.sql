@@ -30,4 +30,5 @@ SELECT
     r.* -- Вибираємо всі колонки одержувача
 FROM
     recipients r
-INNER JOIN StatusViolations sv ON r.id = sv.recipient_id;
+INNER JOIN StatusViolations sv ON r.id = sv.recipient_id
+WHERE r.status !=3;
