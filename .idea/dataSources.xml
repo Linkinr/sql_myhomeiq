@@ -23,7 +23,7 @@
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://prod-intelligence-green.czwienpf2ouy.us-west-2.rds.amazonaws.com:5432/postgres</jdbc-url>
+      <jdbc-url>jdbc:postgresql://prod-intelligence-blue.czwienpf2ouy.us-west-2.rds.amazonaws.com:5432/postgres</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
     <data-source source="LOCAL" name="STAGE_WRITE" uuid="ef1422e9-f636-4613-a343-f948d5480124">
